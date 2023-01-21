@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary-color: #1995f3;
+  --secondary-color: #363748;
+  --background-color: #d4d1d1;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--secondary-color);
+  background: #f4f4f4;
+  height: 250vh;
+}
+
+/* Navbar */
+.navbar {
+  background: var(--secondary-color);
+  color: #fff;
+  padding: 1rem;
+}
+
+/* Showcase */
+.showcase {
+  height: 400px;
+  width: 100%;
+  background: var(--primary-color);
+}
+
+.showcase h1 {
+  font-size: 2.5rem;
+  color: #333;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.showcase form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.showcase form input {
+  font-size: 20px;
+  width: 500px;
+  max-width: 500px;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 2rem;
+}
+
+form button {
+  font-size: 20px;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 5px;
+  background: #333;
+  color: #fff;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+form button:hover {
+  transform: scale(1.1);
+}
+
+/* Image */
+
+.result {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.result > h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.result-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.result-container__item {
+  width: 80%;
+  height: 100%;
+  border: 2px solid var(--secondary-color);
+  border-radius: 5px;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.result-container__item h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.result-container__item .phonetic-item {
+  border: none;
+  border-radius: 5px;
+  background-color: var(--background-color);
+  margin: 20px 10px;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.result-container__item .definition-item {
+  border: none;
+  border-radius: 5px;
+  background-color: var(--background-color);
+  margin: 20px 10px;
+  padding: 10px;
+  border-radius: 5px;
+  gap: 20px;
+}
+
+.definition-item .definition {
+  color: var(--secondary-color);
+  border: 2px solid var(--secondary-color);
+  margin: 10px 0;
+  padding: 10px;
+}
+
+.definition__title {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.conclusion {
+  margin-bottom: 10px;
+}
+
+.definition .title span {
+  font-weight: 600;
+}
+
+.conclusion span {
+  font-weight: 600;
+}
+
+/* Spinner From: https://codepen.io/tbrownvisuals/pen/edGYvx */
+.spinner {
+  position: fixed;
+  z-index: 999;
+  height: 2em;
+  width: 2em;
+  overflow: show;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+/* Transparent Overlay */
+.spinner:before {
+  content: '';
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(rgba(20, 20, 20, 0.8), rgba(0, 0, 0, 0.8));
+
+  background: -webkit-radial-gradient(
+    rgba(20, 20, 20, 0.8),
+    rgba(0, 0, 0, 0.8)
+  );
+}
+
+/* :not(:required) hides these rules from IE9 and below */
+.spinner:not(:required) {
+  /* hide "loading..." text */
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+.spinner:not(:required):after {
+  content: '';
+  display: block;
+  font-size: 10px;
+  width: 1em;
+  height: 1em;
+  margin-top: -0.5em;
+  -webkit-animation: spinner 150ms infinite linear;
+  -moz-animation: spinner 150ms infinite linear;
+  -ms-animation: spinner 150ms infinite linear;
+  -o-animation: spinner 150ms infinite linear;
+  animation: spinner 150ms infinite linear;
+  border-radius: 0.5em;
+  -webkit-box-shadow: rgba(255, 255, 255, 0.75) 1.5em 0 0 0,
+    rgba(255, 255, 255, 0.75) 1.1em 1.1em 0 0,
+    rgba(255, 255, 255, 0.75) 0 1.5em 0 0,
+    rgba(255, 255, 255, 0.75) -1.1em 1.1em 0 0,
+    rgba(255, 255, 255, 0.75) -1.5em 0 0 0,
+    rgba(255, 255, 255, 0.75) -1.1em -1.1em 0 0,
+    rgba(255, 255, 255, 0.75) 0 -1.5em 0 0,
+    rgba(255, 255, 255, 0.75) 1.1em -1.1em 0 0;
+  box-shadow: rgba(255, 255, 255, 0.75) 1.5em 0 0 0,
+    rgba(255, 255, 255, 0.75) 1.1em 1.1em 0 0,
+    rgba(255, 255, 255, 0.75) 0 1.5em 0 0,
+    rgba(255, 255, 255, 0.75) -1.1em 1.1em 0 0,
+    rgba(255, 255, 255, 0.75) -1.5em 0 0 0,
+    rgba(255, 255, 255, 0.75) -1.1em -1.1em 0 0,
+    rgba(255, 255, 255, 0.75) 0 -1.5em 0 0,
+    rgba(255, 255, 255, 0.75) 1.1em -1.1em 0 0;
+}
+
+/* Media query */
+@media (max-width: 768px) {
+  .showcase form input {
+    font-size: 20px;
+    width: 400px;
+    max-width: 400px;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 2rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .showcase {
+    height: 500px;
+  }
+}
+
+/* Animation */
+
+@-webkit-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-moz-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-o-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
