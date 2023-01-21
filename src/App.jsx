@@ -22,7 +22,6 @@ function App() {
         `https://api.dictionaryapi.dev/api/v2/entries/en/${state.word}`
       );
       const data = await response.json();
-      console.log('🚀 ~ file: App.jsx:16 ~ handleClickSubmit ~ data', data);
 
       if (!response.ok) {
         dispatch({ type: ACTION_TYPE.FETCH_FAILURE, payload: data });
@@ -40,6 +39,19 @@ function App() {
         <div className='navbar'>
           <div className='logo'>
             <h2>Free Online Dictionary</h2>
+          </div>
+          <div className='copyright'>
+            <p>
+              &copy; 2023 Copyright by{' '}
+              <a
+                href='https://github.com/theksbd'
+                target='_blank'
+                rel='noreferrer noopener'
+                class='footer__link'
+              >
+                theksbd
+              </a>
+            </p>
           </div>
         </div>
       </header>
