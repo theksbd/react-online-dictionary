@@ -256,11 +256,31 @@ form button:hover {
     border-radius: 5px;
     margin: 2rem;
   }
+
+  .showcase form input {
+    font-size: 16px;
+    width: 400px;
+    max-width: 400px;
+  }
 }
 
 @media (max-width: 550px) {
   .showcase {
     height: 500px;
+  }
+
+  .showcase form input {
+    font-size: 13px;
+    width: 300px;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 400px) {
+  .showcase form input {
+    font-size: 12px;
+    width: 250px;
+    max-width: 300px;
   }
 }
 
